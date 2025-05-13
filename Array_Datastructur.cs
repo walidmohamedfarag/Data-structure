@@ -13,6 +13,12 @@ public class MyArray
     public int GetSize { get {return Size; } }
     public int GetLength { get {return Length; } }
 
+    private void OutOfTheRange(int index)
+    {
+        if(index > Size)
+        throw new IndexOutOfRangeException();
+    }
+
     public void Fill(int length)
     {
         if(length>Size)
@@ -39,6 +45,20 @@ public class MyArray
         Console.WriteLine($"the item number ({index+1}) : {arrayitems[index]}");
         }
     }
+    
+    public int Search(int index)
+    {
+        OutOfTheRange(index);
+        int itemfound = -1;
+        for(int iteration = 0; iteration < Length; iteration++)
+        {
+            if(arrayitems[index] == arrayitems[iteration])
+            return arrayitems[ iteration];
+
+        }
+        return itemfound;
+    }
+
     public void Add(int item)
     {
         if(item < 0)
