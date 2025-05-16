@@ -1,5 +1,5 @@
 ﻿
-namespace Linked_List
+namespace linked_list
 {
     internal class My_Linked
     {
@@ -27,7 +27,7 @@ namespace Linked_List
         public void Add(int item)
         {
             Node newnode = new Node(item);
-            if(IsEmpty())
+            if (IsEmpty())
                 First = newnode;
             else
             {
@@ -38,7 +38,7 @@ namespace Linked_List
         public void Print()
         {
             Node tempPointer = First;
-            while(tempPointer != null)
+            while (tempPointer != null)
             {
                 Console.WriteLine(tempPointer.Data);
                 tempPointer = tempPointer.Next;
@@ -47,7 +47,7 @@ namespace Linked_List
         public void AddBefore(int item, int newitem)
         {
             Node temppointer = First;
-            while(temppointer != null && temppointer.Next.Data != item)
+            while (temppointer != null && temppointer.Next.Data != item)
             {
                 temppointer = temppointer.Next;
             }
@@ -58,7 +58,7 @@ namespace Linked_List
         public void AddLast(int item)
         {
             Node temppointer = First;
-            while(temppointer.Next != null)
+            while (temppointer.Next != null)
             {
                 temppointer = temppointer.Next;
             }
@@ -66,6 +66,20 @@ namespace Linked_List
             newnode.Next = null;
             temppointer.Next = newnode;
         }
+
+        public void Delete(int item)
+        {
+            Node temppointer = null;
+            Node delpointer = First;
+            while(delpointer != null && delpointer.Data != item)
+            {
+                temppointer = delpointer;
+                delpointer = delpointer.Next;
+            }
+            temppointer.Next = delpointer.Next;
+
+        }
+
 
     }
 }
