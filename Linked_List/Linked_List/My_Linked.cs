@@ -1,5 +1,5 @@
 ﻿
-namespace linked_list
+namespace Linked_List
 {
     internal class My_Linked
     {
@@ -71,7 +71,7 @@ namespace linked_list
         {
             Node temppointer = null;
             Node delpointer = First;
-            while(delpointer != null && delpointer.Data != item)
+            while (delpointer != null && delpointer.Data != item)
             {
                 temppointer = delpointer;
                 delpointer = delpointer.Next;
@@ -82,7 +82,7 @@ namespace linked_list
         public bool Search(int item)
         {
             Node temppointer = First;
-            while (temppointer != null)
+            while(temppointer != null)
             {
                 if (temppointer.Data == item)
                     return true;
@@ -90,7 +90,5 @@ namespace linked_list
             }
             return false;
         }
-
-
     }
 }
