@@ -8,7 +8,7 @@ namespace Stack_Datastructure
         {
             First = null;
         }
-        bool IsEbpty()
+        bool IsEmpty()
         {
             return First == null;
         }
