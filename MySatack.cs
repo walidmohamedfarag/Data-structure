@@ -16,7 +16,7 @@ namespace Stack_Datastructure
         public void Push(int item)
         {
             Node newnode = new Node(item);
-            if(IsEbpty())
+            if(IsEmpty())
             {
                 First = newnode;
                 newnode.Next = null;
@@ -29,7 +29,7 @@ namespace Stack_Datastructure
         }
         public int Pop()
         {
-            if(IsEbpty())
+            if(IsEmpty())
                 throw new Exception("Stack is empty");
             Node tempointer = First;
             int popitem = tempointer.Data;
@@ -48,7 +48,7 @@ namespace Stack_Datastructure
         }
         public int Peek()
         {
-            if (IsEbpty())
+            if (IsEmpty())
                 throw new Exception("Stack is empty");
             return First.Data;
         }
